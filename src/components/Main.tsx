@@ -113,6 +113,21 @@ const Main = (props: CSSModuleProps) => {
         setCopyToClip(true);
     }
 
+    const calendarBorderColor = calendarStyles.calendar.borderColor ? `"${calendarStyles.calendar.borderColor}"` : 'undefined'
+    const headerBackground = calendarStyles.header.background ? `"${calendarStyles.header.background}"` : 'undefined'
+    const headerFontColor = calendarStyles.header.fontColor ? `"${calendarStyles.header.fontColor}"` : 'undefined'
+    const headerFontFamily = calendarStyles.header.fontFamily ? `"${calendarStyles.header.fontFamily}"` : 'undefined'
+    const datesBackground = calendarStyles.dates.background ? `"${calendarStyles.dates.background}"` : 'undefined'
+    const datesBorderColor = calendarStyles.dates.borderColor ? `"${calendarStyles.dates.borderColor}"` : 'undefined'
+    const datesNumberColor = calendarStyles.dates.numberColor ? `"${calendarStyles.dates.numberColor}"` : 'undefined'
+    const datesTodayBadgeColor = calendarStyles.dates.todayBadgeColor ? `"${calendarStyles.dates.todayBadgeColor}"` : 'undefined'
+    const datesTodayNumberColor = calendarStyles.dates.todayNumberColor ? `"${calendarStyles.dates.todayNumberColor}"` : 'undefined'
+    const outerBackground = calendarStyles.dates.outsideMonth.background ? `"${calendarStyles.dates.outsideMonth.background}"` : 'undefined'
+    const outerFontColor = calendarStyles.dates.outsideMonth.fontColor ? `"${calendarStyles.dates.outsideMonth.fontColor}"` : 'undefined'
+    const eventsBackground = calendarStyles.events.background ? `"${calendarStyles.events.background}"` : 'undefined'
+    const eventsFontColor = calendarStyles.events.fontColor ? `"${calendarStyles.events.fontColor}"` : 'undefined'
+
+
     return (
         <div className={styles.body}>
             <div className={styles.demoContainer}>
@@ -125,31 +140,31 @@ const Main = (props: CSSModuleProps) => {
                         <p>const styles = &#123;</p>
                         <p>&nbsp; &nbsp; calendar: &#123;</p>
                         <p>&nbsp; &nbsp; &nbsp; &nbsp; border: {calendarStyles.calendar.border?.toString() || 'undefined'}</p>
-                        <p>&nbsp; &nbsp; &nbsp; &nbsp; borderColor: {calendarStyles.calendar.borderColor || 'undefined'} </p>
+                        <p>&nbsp; &nbsp; &nbsp; &nbsp; borderColor: {calendarBorderColor} </p>
                         <p>&nbsp; &nbsp; &#125;,</p>
 
                         <p>&nbsp; &nbsp; header: &#123;</p>
-                        <p>&nbsp; &nbsp; &nbsp; &nbsp; background: {calendarStyles.header.background || 'undefined'} </p>
-                        <p>&nbsp; &nbsp; &nbsp; &nbsp; fontColor: {calendarStyles.header.fontColor || 'undefined'} </p>
-                        <p>&nbsp; &nbsp; &nbsp; &nbsp; fontFamily: {calendarStyles.header.fontFamily || 'undefined'} </p>
+                        <p>&nbsp; &nbsp; &nbsp; &nbsp; background: {headerBackground} </p>
+                        <p>&nbsp; &nbsp; &nbsp; &nbsp; fontColor: {headerFontColor} </p>
+                        <p>&nbsp; &nbsp; &nbsp; &nbsp; fontFamily: {headerFontFamily} </p>
                         <p>&nbsp; &nbsp; &#125;,</p>
 
                         <p>&nbsp; &nbsp; dates: &#123;</p>
                         <p>&nbsp; &nbsp; &nbsp; &nbsp; border: {calendarStyles.dates.border?.toString() || 'undefined'} </p>
-                        <p>&nbsp; &nbsp; &nbsp; &nbsp; background: {calendarStyles.dates.background || 'undefined'} </p>
-                        <p>&nbsp; &nbsp; &nbsp; &nbsp; borderColor: {calendarStyles.dates.borderColor || 'undefined'} </p>
-                        <p>&nbsp; &nbsp; &nbsp; &nbsp; numberColor: {calendarStyles.dates.numberColor || 'undefined'} </p>
-                        <p>&nbsp; &nbsp; &nbsp; &nbsp; todayBadgeColor: {calendarStyles.dates.todayBadgeColor || 'undefined'} </p>
-                        <p>&nbsp; &nbsp; &nbsp; &nbsp; todayNumberColor: {calendarStyles.dates.todayNumberColor || 'undefined'} </p>
+                        <p>&nbsp; &nbsp; &nbsp; &nbsp; background: {datesBackground} </p>
+                        <p>&nbsp; &nbsp; &nbsp; &nbsp; borderColor: {datesBorderColor} </p>
+                        <p>&nbsp; &nbsp; &nbsp; &nbsp; numberColor: {datesNumberColor} </p>
+                        <p>&nbsp; &nbsp; &nbsp; &nbsp; todayBadgeColor: {datesTodayBadgeColor} </p>
+                        <p>&nbsp; &nbsp; &nbsp; &nbsp; todayNumberColor: {datesTodayNumberColor} </p>
                         <p>&nbsp; &nbsp; &nbsp; &nbsp; outsideMonth: &#123; </p>
-                        <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background: {calendarStyles.dates.outsideMonth.background || 'undefined'} </p>
-                        <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; fontColor: {calendarStyles.dates.outsideMonth.fontColor || 'undefined'} </p>
+                        <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background: {outerBackground} </p>
+                        <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; fontColor: {outerFontColor} </p>
                         <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#125; </p>
                         <p>&nbsp; &nbsp; &#125;,</p>
 
                         <p>&nbsp; &nbsp; events: &#123;</p>
-                        <p>&nbsp; &nbsp; &nbsp; &nbsp; background: {calendarStyles.events.background || 'undefined'} </p>
-                        <p>&nbsp; &nbsp; &nbsp; &nbsp; fontColor: {calendarStyles.events.fontColor || 'undefined'} </p>
+                        <p>&nbsp; &nbsp; &nbsp; &nbsp; background: {eventsBackground} </p>
+                        <p>&nbsp; &nbsp; &nbsp; &nbsp; fontColor: {eventsFontColor} </p>
                         <p>&nbsp; &nbsp; &#125;</p>
 
                         <p>&#125;</p>
