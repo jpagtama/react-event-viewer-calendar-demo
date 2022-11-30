@@ -1,0 +1,96 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.container input,
+.container select {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.formPart {
+    display: flex;
+    flex-direction: column;
+}
+
+.container label {
+    margin-bottom: 0.5em;
+    margin-top: 1em;
+    color: darkslategray;
+}
+
+.formPart label {
+    margin-bottom: 0.5em;
+    margin-top: 1em;
+    color: darkslategray;
+}
+
+.formSectionTitle {
+    font-size: 1.5em;
+    font-weight: 300;
+    padding: 0.5em 0.5em 0.25em 0;
+    align-self: flex-end;
+    color: black;
+}
+
+.calendarSection {
+    width: 100%;
+    padding: 1em 1em 2em 1em;
+    display: flex;
+    flex-direction: column;
+    background-color: gainsboro;
+}
+
+.calendarSection input {
+    width: 100%;
+}
+
+.submitButton {
+    align-self: flex-end;
+    background-color: seagreen;
+    color: white;
+    font-size: 1em;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 5px;
+    max-width: 10em;
+    margin-top: 2em;
+    margin-right: 1em;
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .calendarSection {
+        margin-top: 2em;
+        width: 50%;
+    }
+
+    .headerSection {
+        width: 50%;
+    }
+
+    .datesSection {
+        width: 100%;
+    }
+
+    .datesFormContent {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .formPart {
+        width: 48%;
+    }
+
+    .submitButton {
+        margin-left: 85%;
+    }
+}
