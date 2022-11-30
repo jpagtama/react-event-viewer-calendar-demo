@@ -49,7 +49,6 @@
 }
 
 .submitButton {
-    align-self: flex-end;
     background-color: seagreen;
     color: white;
     font-size: 1em;
@@ -57,9 +56,16 @@
     border: none;
     border-radius: 5px;
     max-width: 10em;
-    margin-top: 2em;
-    margin-right: 1em;
     cursor: pointer;
+}
+
+.buttonsArea {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1em;
+    margin-top: 2em;
+    padding: 1em;
+    width: 100%;
 }
 
 @media (min-width: 768px) {
@@ -88,9 +94,5 @@
 
     .formPart {
         width: 48%;
-    }
-
-    .submitButton {
-        margin-left: 85%;
     }
 }
