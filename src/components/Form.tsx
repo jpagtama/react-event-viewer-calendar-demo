@@ -245,8 +245,8 @@ const Demo = (props: Props) => {
                 <input id="eventsFontColor" type="text" value={eventsFontColor} onChange={changeHandler} placeholder="events font color" />
             </div>
             <div className={styles.buttonsArea}>
-                <button type="button" onClick={resetStylesHandler} className={styles.submitButton} >Reset Styles</button>
-                <button type="submit" className={styles.submitButton} >Update</button>
+                <button type="button" onClick={resetStylesHandler} className={styles.button} >Reset Styles</button>
+                <button type="submit" className={styles.button} >Update</button>
             </div>
         </form>
     )
