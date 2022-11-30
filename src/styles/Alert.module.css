@@ -1,0 +1,63 @@
+.alertContainer {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.80);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alertBox {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    max-width: 500px;
+    min-width: 374px;
+    width: 100%;
+    border-radius: 5px;
+    background-color: lightgray;
+    color: black;
+    margin: 1em;
+}
+
+.content {
+    padding: 2em 1em 2em 1em;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.contentRow {
+    width: 100%;
+    display: flex;
+    gap: 10px
+}
+
+.contentTitle {
+    font-weight: bold;
+}
+
+.alertBox h3,
+.alertBox p {
+    margin: 0;
+}
+
+.alertHeader {
+    background: #428bca;
+    padding: 0.25em 1em 1em 1em;
+    font-size: larger;
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.closeX {
+    font-size: 2em;
+    align-self: flex-end;
+    cursor: pointer;
+}
