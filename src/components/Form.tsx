@@ -30,7 +30,7 @@ interface CalendarStyleObject {
 }
 
 interface Props {
-    stylesHandler: (StylesObj: CalendarStyleObject) => void
+    stylesHandler: (StylesObj: CalendarStyleObject, scroll?: boolean) => void
 }
 
 const Demo = (props: Props) => {
@@ -103,9 +103,8 @@ const Demo = (props: Props) => {
         }
     }
 
-    const submitHandler = (e: React.FormEvent) => {
-        e.preventDefault()
-        const styles = {
+    const createStylesObj = () => {
+        return {
             calendar: {
                 border: border === 'false' ? false : true,
                 borderColor: calendarBorderColor,
@@ -132,6 +131,60 @@ const Demo = (props: Props) => {
                 fontColor: eventsFontColor
             }
         }
+    }
+
+    const resetStylesHandler = () => {
+
+        setBorder('true')
+        setCalendarBorderColor('')
+        setHeaderColor('')
+        setHeaderFontColor('')
+        setHeaderFontFamiy('')
+        setDateBorder('true')
+        setDateBackgroundColor('')
+        setDateBorderColor('')
+        setDayNumberColor('')
+        setCurrentDayBadgeColor('')
+        setCurrentDayNumberColor('')
+        setOutsideMonthBackground('')
+        setOutsideMonthFontColor('')
+        setEventsBackground('')
+        setEventsFontColor('')
+
+        const styles = {
+            calendar: {
+                border: true,
+                borderColor: '',
+            },
+            header: {
+                background: '',
+                fontColor: '',
+                fontFamily: '',
+            },
+            dates: {
+                border: true,
+                background: '',
+                borderColor: '',
+                numberColor: '',
+                todayBadgeColor: '',
+                todayNumberColor: '',
+                outsideMonth: {
+                    background: '',
+                    fontColor: ''
+                }
+            },
+            events: {
+                background: '',
+                fontColor: ''
+            }
+        }
+
+        props.stylesHandler(styles, false)
+    }
+
+    const submitHandler = (e: React.FormEvent) => {
+        e.preventDefault()
+        const styles = createStylesObj()
 
         props.stylesHandler(styles)
     }
@@ -191,7 +244,10 @@ const Demo = (props: Props) => {
                 <label htmlFor="eventsFontColor">Font Color:</label>
                 <input id="eventsFontColor" type="text" value={eventsFontColor} onChange={changeHandler} placeholder="events font color" />
             </div>
-            <button className={styles.submitButton} >Update</button>
+            <div className={styles.buttonsArea}>
+                <button type="button" onClick={resetStylesHandler} className={styles.submitButton} >Reset Styles</button>
+                <button type="submit" className={styles.submitButton} >Update</button>
+            </div>
         </form>
     )
 }
