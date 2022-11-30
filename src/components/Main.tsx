@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { FaRegCopy } from 'react-icons/fa'
 import Calendar from 'react-event-viewer-calendar'
 import { IconContext } from 'react-icons/lib';
@@ -7,7 +7,8 @@ import Form from './Form'
 interface CSSModuleProps {
     classes: {
         [key: string]: string
-    }
+    },
+    clickHandler: (events?: string[], date?: string) => void
 }
 
 interface CalendarStyleObject {
@@ -94,14 +95,13 @@ const Main = (props: CSSModuleProps) => {
         { date: new Date(`${current_year}/${current_month}/27`), event: ['Bob\'s play', 'Family dinner', 'Game Night'] },
     ]
 
-    const calendarStylesHandler = (stylesObj: CalendarStyleObject) => {
-        setUpdateStyles(true)
+    const calendarStylesHandler = (stylesObj: CalendarStyleObject, scroll?: boolean) => {
+        if (scroll === undefined || scroll === true) setUpdateStyles(true)
         setCalendarStyles(stylesObj)
     }
 
-    const clickHandler = (events: string[], date: string) => {
-        console.log('events', events)
-        console.log('date', date)
+    const clickHandler = (events?: string[], date?: string) => {
+        props.clickHandler(events, date)
     }
 
     const copyToClipEndHandler = () => {
@@ -117,7 +117,7 @@ const Main = (props: CSSModuleProps) => {
         <div className={styles.body}>
             <div className={styles.demoContainer}>
                 <div ref={calendarRef} className={styles.calendarContainer}>
-                    <Calendar clickHandler={() => clickHandler} events={events} styles={calendarStyles} />
+                    <Calendar clickHandler={clickHandler} events={events} styles={calendarStyles} />
                 </div>
                 <div className={styles.demoForm} >
                     <p className={styles.formTitle}>Styling Options</p>
